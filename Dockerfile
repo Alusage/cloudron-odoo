@@ -70,7 +70,7 @@ RUN pip3 install wheel && \
     && (python3 -m compileall -q /usr/local/lib/python3.8/ || true)
 
 # Patch Odoo to prevent connecting to the default database named 'postgres' every now and then.
-RUN  sed -i.bak "772i\    to = tools.config['db_name']" /app/code/odoo/odoo/sql_db.py
+RUN  sed -i.bak "791i\    to = tools.config['db_name']" /app/code/odoo/odoo/sql_db.py
 
 # Properly map the LDAP attribute 'displayname' instead of 'cn' to the display name of the logged in user.
 RUN  sed -i.bak "198s/'cn'/'displayname'/" /app/code/odoo/addons/auth_ldap/models/res_company_ldap.py

@@ -170,7 +170,7 @@
   target: oca 16.0
   merges:
     - oca 16.0
-    - oca refs/pull/2470/head
+    # - oca refs/pull/2470/head
     - oca refs/pull/2328/head
 ./mis-builder:
   defaults:
@@ -414,9 +414,9 @@
     - oca 16.0
     - oca refs/pull/976/head
     - oca refs/pull/1059/head
-    - oca refs/pull/1073/head
-    - oca refs/pull/1091/head
-    - oca refs/pull/1099/head
+    # - oca refs/pull/1073/head
+    # - oca refs/pull/1091/head
+    # - oca refs/pull/1099/head
 ./pos:
   defaults:
     # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
@@ -505,7 +505,7 @@
   target: oca 16.0
   merges:
     - oca 16.0
-    - oca refs/pull/451/head
+    # - oca refs/pull/451/head
 ./account-analytic:
   defaults:
     # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner

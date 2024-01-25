@@ -1,7 +1,7 @@
 git+https://github.com/OCA/openupgradelib.git@master
 unidecode
 py3o.template
-PyPDF2
+pypdf
 py3o.formats
 zeep
 parse-accept-language
@@ -45,7 +45,7 @@ pdfplumber
 PyGithub
 caldav
 python-stdnum==1.18
-vatnumber
+vatnumber3
 pydrive
 weboob
 dropbox
@@ -63,3 +63,4 @@ openpyxl
 xlrd
 pgpy
 pyjwt
+schwifty
