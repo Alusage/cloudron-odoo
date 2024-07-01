@@ -1,152 +1,164 @@
-sale-workflow:
-  - "*"
-partner-contact:
-  - "*"
-server-ux:
-  - "*"
-bank-payment:
-  - "*"
-account-financial-tools:
-  - "*"
-community-data-files:
-  - "*"
-hr:
-  - "*"
-l10n-france:
-  - "*"
-product-attribute:
-  - "*"
-project:
-  - "*"
-web:
-  - "*"
-website:
-  - "*"
-mis-builder:
-  - "*"
-operating-unit:
-  - "*"
-connector:
-  - "*"
-purchase-workflow:
-  - "*"
-server-env:
-  - "*"
-odoo-theme:
-  - "*"
-report-engine:
-  - "*"
-formio:
-  - "*"
-learning_addons:
-  - "*"
-muk-web:
-  - "*"
-rest-framework:
-  - "*"
-server-auth:
-  - "*"
-server-tools:
-  - "*"
-wms:
-  - "*"
-stock-logistics-warehouse:
-  - "*"
-contract:
-  - "*"
-field-service:
-  - "*"
-queue:
-  - "*"
-commission:
-  - "*"
-pms:
-  - "*"
-dms:
-  - "*"
-social:
-  - "*"
-pos:
-  - "*"
-product-configurator:
-  - "*"
-stock-logistics-workflow:
-  - "*"
-account-financial-reporting:
-  - "*"
-bank-statement-import:
-  - "*"
-account-reconcile:
-  - "*"
-manufacture:
-  - "*"
-multi-company:
-  - "*"
 account-analytic:
-  - "*"
-stock-logistics-reporting:
-  - "*"
-account-invoice-reporting:
-  - "*"
-sale-reporting:
-  - "*"
+  - '*'
 account-closing:
-  - "*"
-account-payment:
-  - "*"
-edi:
-  - "*"
-timesheet:
-  - "*"
-odoo-pim:
-  - "*"
-delivery-carrier:
-  - "*"
-storage:
-  - "*"
-product-variant:
-  - "*"
-e-commerce:
-  - "*"
-hr-expense:
-  - "*"
-crm:
-  - "*"
-maintenance:
-  - "*"
-connector-telephony:
-  - "*"
-server-backend:
-  - "*"
-intrastat-extrastat:
-  - "*"
-brand:
-  - "*"
-hr-holidays:
-  - "*"
-server-brand:
-  - "*"
-report-print-send:
-  - "*"
-calendar:
-  - "*"
-credit-control:
-  - "*"
-myc-extra-addons:
-  - "*"
+  - '*'
+account-financial-reporting:
+  - '*'
+account-financial-tools:
+  - '*'
+account-invoice-reporting:
+  - '*'
 account-invoicing:
-  - "*"
-sync-addons:
-  - "*"
-cooperative:
-  - "*"
-spreadsheet:
-  - "*"
-galicea-addons:
-  - "*"
-project-reporting:
-  - "*"
+  - '*'
 account-move-import:
-  - "*"
+  - '*'
+account-payment:
+  - '*'
+account-reconcile:
+  - '*'
+bank-payment:
+  - '*'
+bank-statement-import:
+  - '*'
+brand:
+  - '*'
+calendar:
+  - '*'
+commission:
+  - '*'
+community-data-files:
+  - '*'
+connector:
+  - '*'
+connector-telephony:
+  - '*'
+contract:
+  - '*'
+cooperative:
+  - '*'
+credit-control:
+  - '*'
+crm:
+  - '*'
+currency:
+  - '*'
+delivery-carrier:
+  - '*'
+design-theme:
+  - '*'
+dms:
+  - '*'
+e-commerce:
+  - '*'
+edi:
+  - '*'
+field-service:
+  - '*'
+galicea-addons:
+  - '*'
+hr:
+  - '*'
+hr-expense:
+  - '*'
+hr-holidays:
+  - '*'
+hr-tools:
+  - '*'
+import-helper:
+  - '*'
+intrastat-extrastat:
+  - '*'
+l10n-france:
+  - '*'
+learning_addons:
+  - '*'
+maintenance:
+  - '*'
+manufacture:
+  - '*'
+mis-builder:
+  - '*'
+mooncard-connector:
+  - '*'
+muk-web:
+  - '*'
+multi-company:
+  - '*'
+odoo-pim:
+  - '*'
+odoo-usability:
+  - '*'
+odoo-web-addons:
+  - '*'
 onlyoffice-odoo:
-  - "onlyoffice_odoo"
+  - onlyoffice_odoo
+operating-unit:
+  - '*'
+partner-contact:
+  - '*'
+pms:
+  - '*'
+pos:
+  - '*'
+product-attribute:
+  - '*'
+product-configurator:
+  - '*'
+product-variant:
+  - '*'
+project:
+  - '*'
+project-reporting:
+  - '*'
+purchase-workflow:
+  - '*'
+queue:
+  - '*'
+reconcile-simple:
+  - '*'
+report-engine:
+  - '*'
+report-print-send:
+  - '*'
+rest-framework:
+  - '*'
+sale-reporting:
+  - '*'
+sale-workflow:
+  - '*'
+server-auth:
+  - '*'
+server-backend:
+  - '*'
+server-brand:
+  - '*'
+server-env:
+  - '*'
+server-tools:
+  - '*'
+server-ux:
+  - '*'
+sign:
+  - '*'
+social:
+  - '*'
+spreadsheet:
+  - '*'
+stock-logistics-barcode:
+  - '*'
+stock-logistics-reporting:
+  - '*'
+stock-logistics-warehouse:
+  - '*'
+stock-logistics-workflow:
+  - '*'
+storage:
+  - '*'
+timesheet:
+  - '*'
+web:
+  - '*'
+website:
+  - '*'
+wms:
+  - '*'
