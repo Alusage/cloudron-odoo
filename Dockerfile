@@ -46,6 +46,9 @@ ENV DEPTH_MERGE=500
 RUN git config --global user.email "cloudron@localhost" && \
     git config --global user.name "Cloudron service"
 
+# Ubuntu Noble (24.04) bloque pip system-wide par défaut (PEP 668)
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
+
 # Odoo 18 depuis OCA/OCB
 RUN git clone https://github.com/OCA/OCB.git --depth 1 -b $ODOO_VERSION /app/code/odoo
 RUN pip3 install --no-cache-dir -e /app/code/odoo && \
