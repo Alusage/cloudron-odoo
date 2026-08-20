@@ -1,3 +1,9 @@
+# Cloudron Odoo 18.0 — addons.yaml
+# Repos absents en 18.0 (supprimés par rapport à v14) :
+#   formio, muk-web, project-tools, pad-tools, sync-addons
+# Repos privés Myceliandre non inclus dans cette image générique :
+#   odoo-theme, vertical-cooperative, galicea-addons, straga-main
+
 sale-workflow:
   - "*"
 openupgrade:
@@ -40,15 +46,7 @@ purchase-workflow:
   - "*"
 server-env:
   - "*"
-odoo-theme:
-  - "*"
 report-engine:
-  - "*"
-formio:
-  - "*"
-# learning_addons:
-#   - "*"
-muk-web:
   - "*"
 rest-framework:
   - "*"
@@ -140,29 +138,16 @@ calendar:
   - "*"
 credit-control:
   - "*"
-# myc-extra-addons:
-#   - "*"
 account-invoicing:
   - "*"
-sync-addons:
-  - "*"
-vertical-cooperative:
-  - "*"
-# nj-addons:
-#   - "*"
 vertical-association:
   - "*"
 account-move-import:
-  - "*"
-galicea-addons:
-  - "*"
-straga-main:
   - "*"
 odoo-usability:
   - "*"
 odoo-py3o-report-templates:
   - "*"
-project-tools:
-  - "*"
-pad-tools:
+# Ajout : e-invoicing France (réforme 2026)
+fr-einvoicing:
   - "*"

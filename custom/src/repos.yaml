@@ -1,897 +1,669 @@
+# See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
+# Cloudron Odoo 18.0 — fork arpol-dev/cloudron-odoo
+# Generé depuis la liste v14 Alusage, en conservant tous les repos ayant une branche 18.0.
+# Repos absents de la v18 OCA (pas de branche 18.0) :
+#   formio (novacode-nl), muk-web (muk-it), project-tools (elabore-coop),
+#   pad-tools (elabore-coop), sync-addons (itpp-labs)
+# Repos privés Myceliandre non inclus dans cette image générique :
+#   odoo-theme, vertical-cooperative, galicea-addons, straga-main
+
+./odoo:
+  defaults:
+    depth: 100
+  remotes:
+    oca: https://github.com/OCA/OCB.git
+    odoo: https://github.com/odoo/odoo.git
+  target: oca 18.0
+  merges:
+    - oca 18.0
+
 ./sale-workflow:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/OCA/sale-workflow.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
+
 ./partner-contact:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/partner-contact.git
-    # myc: ssh://git@git.myceliandre.fr:5022/OCA/partner-contact.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    #- myc 14.0_partner_favorite
-    - oca 14.0
+    - oca 18.0
+
 ./server-ux:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/server-ux.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./bank-payment:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/bank-payment.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/820/head
-    - oca refs/pull/822/head
-    #- oca refs/pull/831/head
-    #- oca refs/pull/858/head
+    - oca 18.0
+
 ./account-financial-tools:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/account-financial-tools.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./community-data-files:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/community-data-files.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./hr:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/hr.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./l10n-switzerland:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/l10n-switzerland.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./l10n-france:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/l10n-france.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/257/head
-    - oca refs/pull/321/head
+    - oca 18.0
+
 ./product-attribute:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/product-attribute.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./project:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/project.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./project-reporting:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/project-reporting.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/44/head
+    - oca 18.0
+
 ./website:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/website.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./web:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/web.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./mis-builder:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/mis-builder.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./operating-unit:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/operating-unit.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./connector:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/connector.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./delivery-carrier:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/OCA/delivery-carrier.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
+
 ./purchase-workflow:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/OCA/purchase-workflow.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
+
 ./server-env:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/OCA/server-env.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
-./odoo-theme:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    myc: https://git.myceliandre.fr/Myceliandre/odoo_theme.git
-  target: myc 14.0
-  merges:
-    - myc 14.0
+    - origin 18.0
+
 ./report-engine:
   defaults:
     depth: 200
   remotes:
     oca: https://github.com/OCA/reporting-engine.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    #- oca refs/pull/445/head
-    #- oca refs/pull/506/head
-    #- oca refs/pull/526/head
-    #- oca refs/pull/502/head
-    # report_py3o PR
-    #- oca refs/pull/445/head
-    - oca 14.0
-./formio:
-  defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/novacode-nl/odoo-formio.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
-# ./learning_addons:
-#   defaults:
-#     # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-#     # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-#     # for a sane value of 100 commits)
-#     depth: $DEPTH_DEFAULT
-#   remotes:
-#     origin: ssh://git@git.myceliandre.fr:5022/Myceliandre/odoo_learning_addons.git
-#   target: origin 14.0
-#   merges:
-#     - origin 14.0
-./muk-web:
-  defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/muk-it/muk_web.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
+    - oca 18.0
+
 ./rest-framework:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/rest-framework.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./server-auth:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/server-auth.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./server-tools:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/server-tools.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./wms:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/wms.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./stock-logistics-warehouse:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/stock-logistics-warehouse.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./contract:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/contract.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./field-service:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/field-service.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./queue:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/queue.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./commission:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/commission.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./pms:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/pms.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./dms:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/dms.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./social:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/social.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./pos:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/pos.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./product-configurator:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/product-configurator.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./stock-logistics-workflow:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/stock-logistics-workflow.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./account-financial-reporting:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/account-financial-reporting.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./bank-statement-import:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/bank-statement-import.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/396/head
-    - oca refs/pull/417/head
-    - oca refs/pull/423/head
+    - oca 18.0
+
 ./account-reconcile:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/account-reconcile.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/361/head
-    - oca refs/pull/382/head
-    - oca refs/pull/402/head
-    - oca refs/pull/412/head
+    - oca 18.0
+
 ./manufacture:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/manufacture.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./multi-company:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/multi-company.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./account-analytic:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/account-analytic.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./stock-logistics-reporting:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/stock-logistics-reporting.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./account-invoice-reporting:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/account-invoice-reporting.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./account-invoicing:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/account-invoicing.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./sale-reporting:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/sale-reporting.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./account-closing:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/account-closing.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/155/head
-    - oca refs/pull/174/head
+    - oca 18.0
+
 ./account-payment:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/account-payment.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./edi:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: 200
   remotes:
     oca: https://github.com/OCA/edi.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-    - oca refs/pull/326/head
-    #- oca refs/pull/334/head
+    - oca 18.0
+
 ./timesheet:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/timesheet.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./odoo-pim:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/odoo-pim.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
+
 ./storage:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/storage.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./product-variant:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/product-variant.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./e-commerce:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/e-commerce.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./hr-expense:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/hr-expense.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./crm:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/crm.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./maintenance:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/maintenance.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./connector-telephony:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/connector-telephony.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./server-backend:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/server-backend.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./intrastat-extrastat:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/intrastat-extrastat.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./brand:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/brand.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./hr-holidays:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/hr-holidays.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./server-brand:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/server-brand.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./report-print-send:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/report-print-send.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./calendar:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/calendar.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
+    - oca 18.0
+
 ./credit-control:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     oca: https://github.com/OCA/credit-control.git
-  target: oca 14.0
+  target: oca 18.0
   merges:
-    - oca 14.0
-# ./myc-extra-addons:
-#   defaults:
-#     depth: $DEPTH_DEFAULT
-#   remotes:
-#     myc: ssh://git@git.myceliandre.fr:5022/njeudy/myc-extra-addons.git
-#   target: myc 14.0
-#   merges:
-#     - myc 14.0
-./sync-addons:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/itpp-labs/sync-addons.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
-./vertical-cooperative:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://git.myceliandre.fr/njeudy/vertical-cooperative.git
-  target: origin 14.0-MIG-INITIAL
-  merges:
-    - origin 14.0-MIG-INITIAL
-# ./nj-addons:
-#   defaults:
-#     depth: $DEPTH_DEFAULT
-#   remotes:
-#     origin: ssh://git@git.myceliandre.fr:5022/nj.0k.io/nj-addons.git
-#   target: origin 14.0
-#   merges:
-#     - origin 14.0
+    - oca 18.0
+
 ./vertical-association:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/OCA/vertical-association.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
+
 ./account-move-import:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/akretion/account-move-import.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
-./galicea-addons:
-  defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://git.myceliandre.fr/Myceliandre/galicea-odoo-addons-ecosystem.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
-./openupgrade:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/OCA/OpenUpgrade.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
-./straga-main:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/straga/odoo_vik_main.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
+    - origin 18.0
+
 ./odoo-usability:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/akretion/odoo-usability.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
+
 ./odoo-py3o-report-templates:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
     origin: https://github.com/akretion/odoo-py3o-report-templates.git
-  target: origin 14.0
+  target: origin 18.0
   merges:
-    - origin 14.0
-./project-tools:
+    - origin 18.0
+
+# Ajout : e-invoicing France (réforme 2026)
+./fr-einvoicing:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
-    origin: https://github.com/elabore-coop/project-tools.git
-  target: origin 14.0
+    origin: https://github.com/akretion/fr-einvoicing.git
+  target: origin 18.0
   merges:
-    - origin 14.0
-./pad-tools:
+    - origin 18.0
+
+# Repos OpenUpgrade (requis pour les migrations)
+./openupgrade:
   defaults:
     depth: $DEPTH_DEFAULT
   remotes:
-    origin: https://github.com/elabore-coop/pad-tools.git
-  target: origin 14.0
+    origin: https://github.com/OCA/OpenUpgrade.git
+  target: origin 18.0
   merges:
-    - origin 14.0
+    - origin 18.0
