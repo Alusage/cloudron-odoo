@@ -7,7 +7,7 @@ WORKDIR /app/code
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates curl dirmngr fonts-noto-cjk gnupg libssl-dev node-less npm \
-    python3-dev python3-pip python3-setuptools python3-wheel python3-cffi python3-ldap \
+    python3-dev python3-pip python3-setuptools python3-wheel python3-ldap \
     python3-qrcode python3-vobject python3-watchdog python3-xlrd python3-xlwt \
     python3-num2words python3-phonenumbers python3-slugify \
     libxml2-dev libxslt1-dev libsasl2-dev libpq-dev libtiff-dev libjpeg-dev \
