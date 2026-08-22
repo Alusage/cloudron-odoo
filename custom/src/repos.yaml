@@ -97,14 +97,16 @@
 #     origin: https://github.com/Alusage/odoo-web-addons.git
 #   target: origin 18.0
 
-./learning_addons:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  merges:
-    - origin 18.0
-  remotes:
-    origin: https://github.com/Alusage/odoo-learning-addons.git
-  target: origin 18.0
+# Pas de branche 18.0 chez Alusage/odoo-learning-addons (14.0 et 16.0 seulement).
+# A reactiver le jour ou la branche est portee.
+# ./learning_addons:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/Alusage/odoo-learning-addons.git
+#   target: origin 18.0
 
 # OCA github organization
 
@@ -719,15 +721,16 @@
     origin: https://github.com/akretion/bank-statement-reconcile-simple.git
   target: origin 18.0
 
+# Le correctif Alusage (16_without_developer_menu_duplicate) n'existe qu'en 16.0
+# sur le fork ; a reporter sur 18.0 s'il est toujours voulu.
 ./odoo-usability:
   defaults:
     depth: $DEPTH_DEFAULT
   merges:
-    - alusage 16_without_developer_menu_duplicate
+    - origin 18.0
   remotes:
     origin: https://github.com/akretion/odoo-usability.git
-    alusage: https://github.com/Alusage/odoo-usability.git
-  target: origin 16_without_developer_menu_duplicate
+  target: origin 18.0
 
 ./mooncard-connector:
   defaults:
