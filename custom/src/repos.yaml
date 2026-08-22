@@ -139,7 +139,6 @@
     depth: 500
   merges:
     - oca 18.0
-    - oca refs/pull/1529/head
   remotes:
     oca: https://github.com/OCA/account-financial-tools.git
   target: oca 18.0
@@ -172,8 +171,6 @@
     depth: 200
   merges:
     - oca 18.0
-    - oca refs/pull/588/head
-    - oca refs/pull/570/head
   remotes:
     oca: https://github.com/OCA/account-reconcile.git
   target: oca 18.0
@@ -192,8 +189,6 @@
     depth: 100
   merges:
     - oca 18.0
-    - oca refs/pull/648/head
-    - oca refs/pull/667/head
   remotes:
     oca: https://github.com/OCA/bank-statement-import.git
   target: oca 18.0
@@ -487,7 +482,6 @@
     depth: 200
   merges:
     - oca 18.0
-    - oca refs/pull/51/head
   remotes:
     oca: https://github.com/OCA/project-reporting.git
   target: oca 18.0
@@ -584,7 +578,6 @@
     depth: 200
   merges:
     - oca 18.0
-    - oca refs/pull/2574/head
   remotes:
     oca: https://github.com/OCA/server-tools.git
   target: oca 18.0
