@@ -19,7 +19,7 @@ facebook_business
 python-telegram-bot
 swagger_spec_validator
 viberbot
-PyMuPDF==1.16.14
+pymupdf
 factur-x
 regex
 dateparser==1.1.1

@@ -13,7 +13,7 @@ partner-contact:
   - "*"
 server-ux:
   - "*"
-bank-payment:
+bank-payment-alternative:
   - "*"
 account-financial-tools:
   - "account_*"

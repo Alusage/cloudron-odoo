@@ -44,11 +44,11 @@
   merges:
     - oca 18.0
 
-./bank-payment:
+./bank-payment-alternative:
   defaults:
     depth: 200
   remotes:
-    oca: https://github.com/OCA/bank-payment.git
+    oca: https://github.com/OCA/bank-payment-alternative.git
   target: oca 18.0
   merges:
     - oca 18.0
@@ -253,12 +253,14 @@
 
 ./contract:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: 400
   remotes:
     oca: https://github.com/OCA/contract.git
+    arpol: https://github.com/arpol-dev/contract.git
   target: oca 18.0
   merges:
     - oca 18.0
+    - arpol 18.0-alternative
 
 ./field-service:
   defaults:
