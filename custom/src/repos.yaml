@@ -139,7 +139,6 @@
     depth: 500
   merges:
     - oca 18.0
-    - oca refs/pull/1529/head
   remotes:
     oca: https://github.com/OCA/account-financial-tools.git
   target: oca 18.0
