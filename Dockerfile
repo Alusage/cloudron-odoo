@@ -62,11 +62,14 @@ RUN git config --global user.email "cloudron@localhost" && \
 # Odoo depuis OCA/OCB : source unique de l'image, coherente avec ODOO_SOURCE
 # et avec les depots OCA agreges dans custom/src.
 RUN git clone https://github.com/OCA/OCB.git --depth 1 -b $ODOO_VERSION /app/code/odoo
+# --ignore-installed est indispensable partout : l'image de base embarque des
+# paquets Python installes par dpkg (cryptography, cffi, setuptools...) sans
+# fichier RECORD, que pip refuse de desinstaller pour les mettre a jour.
 # setuptools<81 : Odoo importe encore pkg_resources, retire au-dela.
-RUN pip3 install --no-cache-dir "setuptools<81"
-RUN pip3 install --no-cache-dir -e /app/code/odoo && \
-    pip3 install --no-cache-dir -r /app/code/odoo/requirements.txt && \
-    pip3 install --no-cache-dir psycopg2-binary gevent psycogreen git-aggregator
+RUN pip3 install --no-cache-dir --ignore-installed "setuptools<81"
+RUN pip3 install --no-cache-dir --ignore-installed -e /app/code/odoo && \
+    pip3 install --no-cache-dir --ignore-installed -r /app/code/odoo/requirements.txt && \
+    pip3 install --no-cache-dir --ignore-installed psycopg2-binary gevent psycogreen git-aggregator
 
 # Patches Cloudron (LDAP displayname, mono-base sql_db et registry).
 RUN apply-odoo-patches $ODOO_VERSION
@@ -89,7 +92,7 @@ ENV JARVIS_ODOO_DIR=/app/code/odoo \
     JARVIS_FILESTORE_DIR=/app/data/odoo/filestore \
     JARVIS_ODOO_CONF=/app/data/odoo.conf \
     PATH="/usr/local/bin/jarvis:$PATH"
-RUN pip3 install --no-cache-dir -r /usr/local/bin/jarvis/requirements.txt && \
+RUN pip3 install --no-cache-dir --ignore-installed -r /usr/local/bin/jarvis/requirements.txt && \
     chmod +x /usr/local/bin/jarvis/jarvis
 
 # Reconciliation de la pile OpenSSL, obligatoirement en dernier. Une dependance
@@ -97,7 +100,7 @@ RUN pip3 install --no-cache-dir -r /usr/local/bin/jarvis/requirements.txt && \
 # remonter un `cryptography` recent qui a retire le binding `_lib.GEN_EMAIL`
 # reference par un vieux pyOpenSSL systeme : Odoo plante alors sur
 # `import OpenSSL` avant meme de charger le module base.
-RUN pip3 install --no-cache-dir --upgrade "pyOpenSSL>=24.3.0" cryptography
+RUN pip3 install --no-cache-dir --ignore-installed --upgrade "pyOpenSSL>=24.3.0" cryptography
 
 ADD start.sh odoo.conf.sample nginx.conf /app/pkg/
 
