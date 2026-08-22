@@ -97,7 +97,13 @@ class NpmInstaller(Installer):
 
 
 class PipInstaller(Installer):
-    _install_command = ["pip", "install", "--no-cache-dir", "-r"]
+    _install_command = [
+        "pip3",
+        "install",
+        "--no-cache-dir",
+        "--break-system-packages",
+        "-r",
+    ]
 
     def requirements(self):
         """Pip will use its ``--requirements`` feature."""

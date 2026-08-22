@@ -6,3 +6,8 @@ build-essential
 libcairo2-dev
 pkg-config
 xmlsec1
+libcairo2
+sox
+ffmpeg
+texlive-full
+libgirepository1.0-dev

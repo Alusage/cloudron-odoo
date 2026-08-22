@@ -1,153 +1,255 @@
-# Cloudron Odoo 18.0 — addons.yaml
-# Repos absents en 18.0 (supprimés par rapport à v14) :
-#   formio, muk-web, project-tools, pad-tools, sync-addons
-# Repos privés Myceliandre non inclus dans cette image générique :
-#   odoo-theme, vertical-cooperative, galicea-addons, straga-main
+# Liaison des addons vers /app/code/auto/addons.
+# Chaque cle doit correspondre a un depot actif de repos.yaml.
 
-sale-workflow:
-  - "*"
-openupgrade:
-  - "openupgrade_framework"
-  - "openupgrade_scripts"
-partner-contact:
-  - "*"
-server-ux:
-  - "*"
-bank-payment-alternative:
-  - "*"
-account-financial-tools:
-  - "account_*"
-  - "base_*"
-community-data-files:
-  - "*"
-hr:
-  - "*"
-l10n-france:
-  - "*"
-l10n-switzerland:
-  - "*"
-product-attribute:
-  - "*"
-project:
-  - "*"
-project-reporting:
-  - "*"
-web:
-  - "*"
-website:
-  - "*"
-mis-builder:
-  - "*"
-operating-unit:
-  - "*"
-connector:
-  - "*"
-purchase-workflow:
-  - "*"
-server-env:
-  - "*"
-report-engine:
-  - "*"
-rest-framework:
-  - "*"
-server-auth:
-  - "*"
-server-tools:
-  - "*"
-wms:
-  - "*"
-stock-logistics-warehouse:
-  - "*"
-contract:
-  - "*"
-field-service:
-  - "*"
-queue:
-  - "*"
-commission:
-  - "*"
-pms:
-  - "*"
-dms:
-  - "*"
-social:
-  - "*"
-pos:
-  - "*"
-product-configurator:
-  - "*"
-stock-logistics-workflow:
-  - "*"
-account-financial-reporting:
-  - "*"
-bank-statement-import:
-  - "*"
-account-reconcile:
-  - "*"
-manufacture:
-  - "*"
-multi-company:
-  - "*"
 account-analytic:
-  - "*"
-stock-logistics-reporting:
-  - "*"
-account-invoice-reporting:
-  - "*"
-sale-reporting:
-  - "*"
+  - '*'
 account-closing:
-  - "*"
-account-payment:
-  - "*"
-edi:
-  - "*"
-timesheet:
-  - "*"
-odoo-pim:
-  - "*"
-delivery-carrier:
-  - "*"
-storage:
-  - "*"
-product-variant:
-  - "*"
-e-commerce:
-  - "*"
-hr-expense:
-  - "*"
-crm:
-  - "*"
-maintenance:
-  - "*"
-connector-telephony:
-  - "*"
-server-backend:
-  - "*"
-intrastat-extrastat:
-  - "*"
-brand:
-  - "*"
-hr-holidays:
-  - "*"
-server-brand:
-  - "*"
-report-print-send:
-  - "*"
-calendar:
-  - "*"
-credit-control:
-  - "*"
+  - '*'
+account-financial-reporting:
+  - '*'
+account-financial-tools:
+  - '*'
+account-invoice-reporting:
+  - '*'
 account-invoicing:
-  - "*"
-vertical-association:
-  - "*"
+  - '*'
 account-move-import:
-  - "*"
-odoo-usability:
-  - "*"
-odoo-py3o-report-templates:
-  - "*"
-# Ajout : e-invoicing France (réforme 2026)
+  - '*'
+account-payment:
+  - '*'
+account-reconcile:
+  - '*'
+bank-payment-alternative:
+  - '*'
+bank-statement-import:
+  - '*'
+brand:
+  - '*'
+calendar:
+  - '*'
+commission:
+  - '*'
+community-data-files:
+  - '*'
+connector:
+  - '*'
+connector-telephony:
+  - '*'
+contract:
+  - '*'
+cooperative:
+  - '*'
+credit-control:
+  - '*'
+crm:
+  - '*'
+currency:
+  - '*'
+delivery-carrier:
+  - '*'
+design-theme:
+  - '*'
+dms:
+  - '*'
+donation:
+  - '*'
+e-commerce:
+  - '*'
+edi:
+  - '*'
+field-service:
+  - '*'
 fr-einvoicing:
-  - "*"
+  - '*'
+hr:
+  - '*'
+hr-expense:
+  - '*'
+hr-holidays:
+  - '*'
+import-helper:
+  - '*'
+intrastat-extrastat:
+  - '*'
+l10n-france:
+  - '*'
+l10n-switzerland:
+  - '*'
+learning_addons:
+  - '*'
+maintenance:
+  - '*'
+manufacture:
+  - '*'
+mis-builder:
+  - '*'
+mooncard-connector:
+  - '*'
+multi-company:
+  - '*'
+odoo-pim:
+  - '*'
+odoo-py3o-report-templates:
+  - '*'
+odoo-usability:
+  - '*'
+onlyoffice-odoo:
+  - onlyoffice_odoo
+openupgrade:
+  - openupgrade_framework
+  - openupgrade_scripts
+operating-unit:
+  - '*'
+partner-contact:
+  - '*'
+pms:
+  - '*'
+pos:
+  - '*'
+product-attribute:
+  - base_product_mass_addition
+  - pos_product_cost_security
+  - product_abc_classification
+  - product_abc_classification_sale_stock
+  - product_assortment
+  - product_attachment_zipped_download
+  - product_attribute_archive
+  - product_attribute_company_favorite
+  - product_attribute_model_link
+  - product_attribute_value_menu
+  - product_category_active
+  - product_category_code
+  - product_category_description
+  - product_category_hr_department
+  - product_category_level
+  - product_category_product_qty
+  - product_category_type
+  - product_code_mandatory
+  - product_code_mixin
+  - product_code_regex_validation
+  - product_code_unique
+  - product_company_default
+  - product_cost_security
+  - product_country_restriction
+  - product_dimension
+  - product_english_name
+  - product_expiry_configurable
+  - product_get_price_helper
+  - product_internal_reference_generator
+  - product_logistics_uom
+  - product_lot_sequence
+  - product_main_supplierinfo
+  - product_manufacturer
+  - product_multi_category
+  - product_net_weight
+  - product_optional_product_quantity
+  - product_origin
+  - product_packaging_container_deposit
+  - product_packaging_dimension
+  - product_packaging_level
+  - product_packaging_level_purchasable
+  - product_packaging_level_salable
+  - product_pricelist_alternative
+  - product_pricelist_direct_print
+  - product_pricelist_direct_print_company_group
+  - product_pricelist_direct_print_website_sale
+  - product_pricelist_direct_print_xlsx
+  - product_pricelist_fixed_currency_rate
+  - product_pricelist_item_list_view
+  - product_pricelist_revision
+  - product_pricelist_simulation
+  - product_pricelist_simulation_margin
+  - product_pricelist_supplierinfo
+  - product_print_category
+  - product_product_template_link
+  - product_profile
+  - product_route_mto
+  - product_sale_description
+  - product_secondary_unit
+  - product_sequence
+  - product_set
+  - product_simple_seasonality
+  - product_standard_price_tax_included
+  - product_state
+  - product_sticker
+  - product_stock_state
+  - product_supplierinfo_archive
+  - product_supplierinfo_code
+  - product_supplierinfo_for_customer
+  - product_supplierinfo_import_by_barcode
+  - product_supplierinfo_revision
+  - product_supplierinfo_stock_picking_type
+  - product_template_has_one_variant
+  - product_template_tags
+  - product_total_weight_from_packaging
+  - product_uom_measure_type
+  - product_uom_po_domain
+  - product_uom_updatable
+  - product_uom_use_type
+  - product_variant_attribute_name_manager
+  - sale_product_template_tags
+  - stock_lot_is_archived
+  - stock_production_lot_expired_date
+  - uom_category_active
+product-configurator:
+  - '*'
+product-variant:
+  - '*'
+project:
+  - '*'
+project-reporting:
+  - '*'
+purchase-workflow:
+  - '*'
+queue:
+  - '*'
+reconcile-simple:
+  - '*'
+report-engine:
+  - '*'
+report-print-send:
+  - '*'
+rest-framework:
+  - '*'
+sale-reporting:
+  - '*'
+sale-workflow:
+  - '*'
+server-auth:
+  - '*'
+server-backend:
+  - '*'
+server-brand:
+  - '*'
+server-env:
+  - '*'
+server-tools:
+  - '*'
+server-ux:
+  - '*'
+sign:
+  - '*'
+social:
+  - '*'
+spreadsheet:
+  - '*'
+stock-logistics-barcode:
+  - '*'
+stock-logistics-reporting:
+  - '*'
+stock-logistics-warehouse:
+  - '*'
+stock-logistics-workflow:
+  - '*'
+storage:
+  - '*'
+timesheet:
+  - '*'
+vertical-association:
+  - '*'
+web:
+  - '*'
+website:
+  - '*'
+wms:
+  - '*'

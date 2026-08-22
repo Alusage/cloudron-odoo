@@ -1,671 +1,803 @@
-# See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
-# Cloudron Odoo 18.0 — fork arpol-dev/cloudron-odoo
-# Generé depuis la liste v14 Alusage, en conservant tous les repos ayant une branche 18.0.
-# Repos absents de la v18 OCA (pas de branche 18.0) :
-#   formio (novacode-nl), muk-web (muk-it), project-tools (elabore-coop),
-#   pad-tools (elabore-coop), sync-addons (itpp-labs)
-# Repos privés Myceliandre non inclus dans cette image générique :
-#   odoo-theme, vertical-cooperative, galicea-addons, straga-main
+# Depots agreges dans /app/code/custom/src par git-aggregator.
+# Le coeur d'Odoo n'est PAS agrege ici : il est clone une seule fois depuis
+# OCA/OCB vers /app/code/odoo par le Dockerfile.
 
-./odoo:
-  defaults:
-    depth: 100
-  remotes:
-    oca: https://github.com/OCA/OCB.git
-    odoo: https://github.com/odoo/odoo.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./sale-workflow:
+./design-theme:
   defaults:
     depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/OCA/sale-workflow.git
-  target: origin 18.0
   merges:
     - origin 18.0
-
-./partner-contact:
-  defaults:
-    depth: $DEPTH_DEFAULT
   remotes:
-    oca: https://github.com/OCA/partner-contact.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./server-ux:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/server-ux.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./bank-payment-alternative:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/bank-payment-alternative.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./account-financial-tools:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/account-financial-tools.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./community-data-files:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/community-data-files.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./hr:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/hr.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./l10n-switzerland:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/l10n-switzerland.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./l10n-france:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/l10n-france.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./product-attribute:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/product-attribute.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./project:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/project.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./project-reporting:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/project-reporting.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./website:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/website.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./web:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/web.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./mis-builder:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/mis-builder.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./operating-unit:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/operating-unit.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./connector:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/connector.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./delivery-carrier:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/OCA/delivery-carrier.git
+    origin: https://github.com/odoo/design-themes.git
   target: origin 18.0
+
+# Elabore github organization
+
+# ./account-tools:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/elabore-coop/account-tools.git
+#   target: origin 18.0
+
+# ./hr-tools:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/elabore-coop/hr-tools.git
+#   target: origin 18.0
+
+# ./maintenance-tools:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/elabore-coop/maintenance-tools.git
+#   target: origin 18.0
+
+# ./partner-tools:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/elabore-coop/partner-tools.git
+#   target: origin 18.0
+
+# ./project-tools:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/elabore-coop/project-tools.git
+#   target: origin 18.0
+
+
+# Myceliandre / Alusage
+
+# ./galicea-addons:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://git.myceliandre.fr/Myceliandre/galicea-odoo-addons-ecosystem.git
+#   target: origin 18.0
+
+# ./myc-extra-addons:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - myc 18.0
+#   remotes:
+#     myc: ssh://git@git.myceliandre.fr:5022/njeudy/myc-extra-addons.git
+#   target: myc 18.0
+
+# ./nj-addons:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: ssh://git@git.myceliandre.fr:5022/nj.0k.io/nj-addons.git
+#   target: origin 18.0
+
+# ./odoo-web-addons:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   merges:
+#     - origin 18.0
+#   remotes:
+#     origin: https://github.com/Alusage/odoo-web-addons.git
+#   target: origin 18.0
+
+./learning_addons:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - origin 18.0
-
-./purchase-workflow:
-  defaults:
-    depth: $DEPTH_DEFAULT
   remotes:
-    origin: https://github.com/OCA/purchase-workflow.git
+    origin: https://github.com/Alusage/odoo-learning-addons.git
   target: origin 18.0
-  merges:
-    - origin 18.0
 
-./server-env:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    origin: https://github.com/OCA/server-env.git
-  target: origin 18.0
-  merges:
-    - origin 18.0
-
-./report-engine:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/reporting-engine.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./rest-framework:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/rest-framework.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./server-auth:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/server-auth.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./server-tools:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/server-tools.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./wms:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/wms.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./stock-logistics-warehouse:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/stock-logistics-warehouse.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./contract:
-  defaults:
-    depth: 400
-  remotes:
-    oca: https://github.com/OCA/contract.git
-    arpol: https://github.com/arpol-dev/contract.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-    - arpol 18.0-alternative
-
-./field-service:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/field-service.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./queue:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/queue.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./commission:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/commission.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./pms:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/pms.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./dms:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/dms.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./social:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/social.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./pos:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/pos.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./product-configurator:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/product-configurator.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./stock-logistics-workflow:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/stock-logistics-workflow.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./account-financial-reporting:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/account-financial-reporting.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./bank-statement-import:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/bank-statement-import.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./account-reconcile:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/account-reconcile.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./manufacture:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/manufacture.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./multi-company:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/multi-company.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
+# OCA github organization
 
 ./account-analytic:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/account-analytic.git
   target: oca 18.0
-  merges:
-    - oca 18.0
-
-./stock-logistics-reporting:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/stock-logistics-reporting.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./account-invoice-reporting:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/account-invoice-reporting.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./account-invoicing:
-  defaults:
-    depth: 200
-  remotes:
-    oca: https://github.com/OCA/account-invoicing.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./sale-reporting:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/sale-reporting.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
 ./account-closing:
   defaults:
-    depth: 200
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/account-closing.git
   target: oca 18.0
+./account-financial-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - oca 18.0
-
+  remotes:
+    oca: https://github.com/OCA/account-financial-reporting.git
+  target: oca 18.0
+./account-financial-tools:
+  defaults:
+    depth: 500
+  merges:
+    - oca 18.0
+    - oca refs/pull/1529/head
+  remotes:
+    oca: https://github.com/OCA/account-financial-tools.git
+  target: oca 18.0
+./account-invoice-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/account-invoice-reporting.git
+  target: oca 18.0
+./account-invoicing:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/account-invoicing.git
+  target: oca 18.0
 ./account-payment:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/account-payment.git
   target: oca 18.0
-  merges:
-    - oca 18.0
-
-./edi:
+./account-reconcile:
   defaults:
     depth: 200
-  remotes:
-    oca: https://github.com/OCA/edi.git
-  target: oca 18.0
   merges:
     - oca 18.0
-
-./timesheet:
+    - oca refs/pull/588/head
+    - oca refs/pull/570/head
+  remotes:
+    oca: https://github.com/OCA/account-reconcile.git
+  target: oca 18.0
+# v18 : les modules de bank-payment ont ete renommes et vivent desormais
+# dans bank-payment-alternative (account_payment_base_oca, account_payment_mandate...)
+./bank-payment-alternative:
   defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/timesheet.git
-  target: oca 18.0
+    depth: 200
   merges:
     - oca 18.0
-
-./odoo-pim:
+  remotes:
+    oca: https://github.com/OCA/bank-payment-alternative.git
+  target: oca 18.0
+./bank-statement-import:
   defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/odoo-pim.git
-  target: oca 18.0
+    depth: 100
   merges:
     - oca 18.0
-
-
-./storage:
-  defaults:
-    depth: $DEPTH_DEFAULT
+    - oca refs/pull/648/head
+    - oca refs/pull/667/head
   remotes:
-    oca: https://github.com/OCA/storage.git
+    oca: https://github.com/OCA/bank-statement-import.git
   target: oca 18.0
-  merges:
-    - oca 18.0
-
-./product-variant:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/product-variant.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./e-commerce:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/e-commerce.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./hr-expense:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/hr-expense.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./crm:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/crm.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./maintenance:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/maintenance.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./connector-telephony:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/connector-telephony.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./server-backend:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/server-backend.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./intrastat-extrastat:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/intrastat-extrastat.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
 ./brand:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/brand.git
   target: oca 18.0
-  merges:
-    - oca 18.0
-
-./hr-holidays:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/hr-holidays.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./server-brand:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/server-brand.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
-./report-print-send:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    oca: https://github.com/OCA/report-print-send.git
-  target: oca 18.0
-  merges:
-    - oca 18.0
-
 ./calendar:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/calendar.git
   target: oca 18.0
+./commission:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - oca 18.0
-
+  remotes:
+    oca: https://github.com/OCA/commission.git
+  target: oca 18.0
+./community-data-files:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/community-data-files.git
+  target: oca 18.0
+./connector:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/connector.git
+  target: oca 18.0
+./connector-telephony:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/connector-telephony.git
+  target: oca 18.0
+./contract:
+  defaults:
+    depth: 400
+  merges:
+    - oca 18.0
+    # porte contract_payment_mode et contract_mandate vers bank-payment-alternative
+    - arpol 18.0-alternative
+  remotes:
+    oca: https://github.com/OCA/contract.git
+    arpol: https://github.com/arpol-dev/contract.git
+  target: oca 18.0
+./cooperative:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/cooperative.git
+  target: oca 18.0
 ./credit-control:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
     oca: https://github.com/OCA/credit-control.git
   target: oca 18.0
-  merges:
-    - oca 18.0
-
-./vertical-association:
+./crm:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
   remotes:
-    origin: https://github.com/OCA/vertical-association.git
-  target: origin 18.0
+    oca: https://github.com/OCA/crm.git
+  target: oca 18.0
+./currency:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/currency.git
+  target: origin 18.0
+./delivery-carrier:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/delivery-carrier.git
+  target: origin 18.0
+./dms:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/dms.git
+  target: oca 18.0
+./donation:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/donation.git
+  target: oca 18.0
+./e-commerce:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/e-commerce.git
+  target: oca 18.0
+./edi:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/edi.git
+    alusage: https://github.com/Alusage/edi.git
+  target: oca 18.0
+./field-service:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/field-service.git
+  target: oca 18.0
+./hr:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/hr.git
+  target: oca 18.0
+./hr-expense:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/hr-expense.git
+  target: oca 18.0
+./hr-holidays:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/hr-holidays.git
+  target: oca 18.0
+./intrastat-extrastat:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/intrastat-extrastat.git
+  target: oca 18.0
+./l10n-france:
+  defaults:
+    depth: 400
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/l10n-france.git
+  target: oca 18.0
+./maintenance:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/maintenance.git
+  target: oca 18.0
+./manufacture:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/manufacture.git
+  target: oca 18.0
+./mis-builder:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/mis-builder.git
+  target: oca 18.0
+./multi-company:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/multi-company.git
+  target: oca 18.0
+./odoo-pim:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/odoo-pim.git
+  target: oca 18.0
+./operating-unit:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/operating-unit.git
+  target: oca 18.0
+./partner-contact:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    myc: ssh://git@git.myceliandre.fr:5022/OCA/partner-contact.git
+    oca: https://github.com/OCA/partner-contact.git
+  target: oca 18.0
+./pms:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/pms.git
+  target: oca 18.0
+./pos:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/pos.git
+  target: oca 18.0
+./product-attribute:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/product-attribute.git
+  target: oca 18.0
+./product-configurator:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/product-configurator.git
+  target: oca 18.0
+./product-variant:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/product-variant.git
+  target: oca 18.0
+./project:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/project.git
+  target: oca 18.0
+./project-reporting:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+    - oca refs/pull/51/head
+  remotes:
+    oca: https://github.com/OCA/project-reporting.git
+  target: oca 18.0
+./purchase-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/purchase-workflow.git
+  target: origin 18.0
+./queue:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/queue.git
+  target: oca 18.0
+./report-engine:
+  defaults:
+    depth: 400
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/reporting-engine.git
+  target: oca 18.0
+./report-print-send:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/report-print-send.git
+  target: oca 18.0
+./rest-framework:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/rest-framework.git
+  target: oca 18.0
+./sale-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/sale-reporting.git
+  target: oca 18.0
+./sale-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/sale-workflow.git
+  target: origin 18.0
+./server-auth:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/server-auth.git
+  target: oca 18.0
+./server-backend:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/server-backend.git
+  target: oca 18.0
+./server-brand:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/server-brand.git
+  target: oca 18.0
+./server-env:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/server-env.git
+  target: origin 18.0
+./server-tools:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+    - oca refs/pull/2574/head
+  remotes:
+    oca: https://github.com/OCA/server-tools.git
+  target: oca 18.0
+./server-ux:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/server-ux.git
+  target: oca 18.0
+./sign:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/OCA/sign.git
+  target: origin 18.0
+./social:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/social.git
+  target: oca 18.0
+./spreadsheet:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/spreadsheet.git
+  target: oca 18.0
+./stock-logistics-barcode:
+  defaults:
+    depth: 500
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-barcode.git
+  target: oca 18.0
+./stock-logistics-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-reporting.git
+  target: oca 18.0
+./stock-logistics-warehouse:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-warehouse.git
+  target: oca 18.0
+./stock-logistics-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-workflow.git
+  target: oca 18.0
+./storage:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/storage.git
+  target: oca 18.0
+./timesheet:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/timesheet.git
+  target: oca 18.0
+./vertical-association:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/OCA/vertical-association.git
+    target: origin 18.0
+    merges:
+        - origin 18.0
+./web:
+  defaults:
+    depth: 200
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/web.git
+  target: oca 18.0
+./website:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/website.git
+  target: oca 18.0
+./wms:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/wms.git
+  target: oca 18.0
+
+# Akretion github organization
 
 ./account-move-import:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
   remotes:
     origin: https://github.com/akretion/account-move-import.git
   target: origin 18.0
+
+./reconcile-simple:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - origin 18.0
+  remotes:
+    origin: https://github.com/akretion/bank-statement-reconcile-simple.git
+  target: origin 18.0
 
 ./odoo-usability:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - alusage 16_without_developer_menu_duplicate
   remotes:
     origin: https://github.com/akretion/odoo-usability.git
-  target: origin 18.0
+    alusage: https://github.com/Alusage/odoo-usability.git
+  target: origin 16_without_developer_menu_duplicate
+
+./mooncard-connector:
+  defaults:
+    depth: $DEPTH_DEFAULT
   merges:
     - origin 18.0
+  remotes:
+    origin: https://github.com/akretion/odoo-mooncard-connector.git
+  target: origin 18.0
+
+./import-helper:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/akretion/odoo-import-helper.git
+  target: origin 18.0
+
+# Onlyoffice github organization
+
+./onlyoffice-odoo:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/ONLYOFFICE/onlyoffice_odoo.git
+  target: origin 18.0
+
+# Akretion
 
 ./odoo-py3o-report-templates:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
   remotes:
     origin: https://github.com/akretion/odoo-py3o-report-templates.git
   target: origin 18.0
-  merges:
-    - origin 18.0
 
-# Ajout : e-invoicing France (réforme 2026)
+# e-invoicing France (reforme 2026)
+
 ./fr-einvoicing:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
   remotes:
     origin: https://github.com/akretion/fr-einvoicing.git
   target: origin 18.0
-  merges:
-    - origin 18.0
 
-# Repos OpenUpgrade (requis pour les migrations)
+# Localisation Suisse
+
+./l10n-switzerland:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - oca 18.0
+  remotes:
+    oca: https://github.com/OCA/l10n-switzerland.git
+  target: oca 18.0
+
+# OpenUpgrade (requis pour les migrations de version)
+
 ./openupgrade:
   defaults:
     depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
   remotes:
     origin: https://github.com/OCA/OpenUpgrade.git
   target: origin 18.0
-  merges:
-    - origin 18.0

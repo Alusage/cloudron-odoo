@@ -1,0 +1,12 @@
+# Patch Registry pour Odoo 18.0 (Cloudron mono-base)
+# Le patch sql_db.py force déjà la CONNEXION vers tools.config['db_name'].
+# Mais Registry(db_name) garde le nom demandé comme clé de cache : un client
+# externe qui s'authentifie avec un nom "amical" (ex: db='alusage' au lieu du
+# hash Cloudron 'dbXXXX...') déclenche un build de registry parasite qui plante
+# (setup_models -> 'Registry' object has no attribute '_m2m').
+# On coerce donc le nom de base vers tools.config['db_name'] dès l'entrée de
+# Registry.__new__, pour que tout nom demandé renvoie l'unique registry réel.
+
+if [ -f /app/code/odoo/odoo/modules/registry.py ] && ! grep -q "Cloudron registry alias" /app/code/odoo/odoo/modules/registry.py; then
+    sed -i.bak "/assert db_name, \"Missing database name\"/a\\        if config.get('db_name'):  # Cloudron registry alias (mono-base)\\n            db_name = config['db_name'][0] if isinstance(config['db_name'], list) else config['db_name']" /app/code/odoo/odoo/modules/registry.py
+fi
