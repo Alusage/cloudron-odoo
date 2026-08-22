@@ -5,7 +5,7 @@ cachetools
 caldav
 cerberus==1.3.2
 dropbox
-extendable-pydantic
+#extendable-pydantic
 factur-x
 formio-data
 freezegun
@@ -18,6 +18,7 @@ marshmallow-objects>=2.0.0
 mock
 odoo_test_helper
 openpyxl
+ovh
 git+https://github.com/OCA/openupgradelib.git@master
 parse-accept-language
 payplug==1.3.1
@@ -28,6 +29,7 @@ py3o.template
 pycountry
 pycryptodome
 pydrive
+git+https://github.com/akretion/pyfrdas2.git@main
 PyGithub
 pyjwt
 PyPDF2
@@ -39,10 +41,17 @@ python-barcode
 python-jose
 python-stdnum==1.18
 requests_oauthlib
-setuptools<58.0
+#setuptools<58.0
+#typing_extensions
 unicodecsv
 unidecode
 vatnumber3
 weboob
 xlrd
 zeep
+astor
+schwifty==2024.4.0
+sortedcontainers
+pyocclient
+pyOpenSSL>=23.1.0
+phonenumbers

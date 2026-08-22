@@ -16,6 +16,8 @@ account-payment:
   - '*'
 account-reconcile:
   - '*'
+account-tools:
+  - '*'
 bank-payment:
   - '*'
 bank-statement-import:
@@ -48,6 +50,8 @@ design-theme:
   - '*'
 dms:
   - '*'
+donation:
+  - '*'
 e-commerce:
   - '*'
 edi:
@@ -72,7 +76,11 @@ l10n-france:
   - '*'
 learning_addons:
   - '*'
+lokavaluto-addons:
+  - '*'
 maintenance:
+  - '*'
+maintenance-tools:
   - '*'
 manufacture:
   - '*'
@@ -96,12 +104,97 @@ operating-unit:
   - '*'
 partner-contact:
   - '*'
+partner-tools:
+  - '*'
 pms:
   - '*'
 pos:
   - '*'
 product-attribute:
-  - '*'
+  - base_product_mass_addition
+  - pos_product_cost_security
+  - product_abc_classification
+  - product_abc_classification_sale_stock
+  - product_assortment
+  - product_attachment_zipped_download
+  - product_attribute_archive
+  - product_attribute_company_favorite
+  - product_attribute_model_link
+  - product_attribute_value_menu
+  - product_category_active
+  - product_category_code
+  - product_category_description
+  - product_category_hr_department
+  - product_category_level
+  - product_category_product_qty
+  - product_category_type
+  - product_code_mandatory
+  - product_code_mixin
+  - product_code_regex_validation
+  - product_code_unique
+  - product_company_default
+  - product_cost_security
+  - product_country_restriction
+  - product_dimension
+  - product_english_name
+  - product_expiry_configurable
+  - product_get_price_helper
+  - product_internal_reference_generator
+  - product_logistics_uom
+  - product_lot_sequence
+  - product_main_supplierinfo
+  - product_manufacturer
+  - product_multi_category
+  - product_net_weight
+  - product_optional_product_quantity
+  - product_origin
+  - product_packaging_container_deposit
+  - product_packaging_dimension
+  - product_packaging_level
+  - product_packaging_level_purchasable
+  - product_packaging_level_salable
+  - product_pricelist_alternative
+  - product_pricelist_direct_print
+  - product_pricelist_direct_print_company_group
+  - product_pricelist_direct_print_website_sale
+  - product_pricelist_direct_print_xlsx
+  - product_pricelist_fixed_currency_rate
+  - product_pricelist_item_list_view
+  - product_pricelist_revision
+  - product_pricelist_simulation
+  - product_pricelist_simulation_margin
+  - product_pricelist_supplierinfo
+  - product_print_category
+  - product_product_template_link
+  - product_profile
+  - product_route_mto
+  - product_sale_description
+  - product_secondary_unit
+  - product_sequence
+  - product_set
+  - product_simple_seasonality
+  - product_standard_price_tax_included
+  - product_state
+  - product_sticker
+  - product_stock_state
+  - product_supplierinfo_archive
+  - product_supplierinfo_code
+  - product_supplierinfo_for_customer
+  - product_supplierinfo_import_by_barcode
+  - product_supplierinfo_revision
+  - product_supplierinfo_stock_picking_type
+  - product_template_has_one_variant
+  - product_template_tags
+  - product_total_weight_from_packaging
+  - product_uom_measure_type
+  - product_uom_po_domain
+  - product_uom_updatable
+  - product_uom_use_type
+  - product_variant_attribute_name_manager
+  - sale_product_template_tags
+  - stock_lot_is_archived
+  - stock_production_lot_expired_date
+  - uom_category_active
 product-configurator:
   - '*'
 product-variant:
@@ -109,6 +202,8 @@ product-variant:
 project:
   - '*'
 project-reporting:
+  - '*'
+project-tools:
   - '*'
 purchase-workflow:
   - '*'
@@ -155,6 +250,8 @@ stock-logistics-workflow:
 storage:
   - '*'
 timesheet:
+  - '*'
+vertical-association:
   - '*'
 web:
   - '*'

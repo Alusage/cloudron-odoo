@@ -36,7 +36,7 @@ if [[ ! -f /app/data/odoo.conf ]]; then
 
   echo "Copying default configuration file to /app/data/odoo.conf..."
   cp /app/pkg/odoo.conf.sample /app/data/odoo.conf
-  crudini --set /app/data/odoo.conf 'options' list_db "False"
+  crudini --set /app/data/odoo.conf 'options' list_db "True"
   crudini --set /app/data/odoo.conf 'options' admin_password "$CLOUDRON_MAIL_SMTP_PASSWORD"
   echo "First run complete."
 fi
@@ -44,12 +44,17 @@ fi
 # These values should be re-set to make Odoo work as expcected.
 echo "Ensuring proper [options] in /app/data/odoo.conf ..."
 
-/usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -i auth_ldap,fetchmail -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT --db_user $CLOUDRON_POSTGRESQL_USERNAME --db_pass $CLOUDRON_POSTGRESQL_PASSWORD --without-demo all --stop-after-init
+#/usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -i auth_ldap,fetchmail -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT --db_user $CLOUDRON_POSTGRESQL_USERNAME --db_pass $CLOUDRON_POSTGRESQL_PASSWORD --without-demo all --stop-after-init
+
+
+echo "Step 1: Setting up Odoo configuration..."
 
 # Check if asking update
 if [[ -f /app/data/update ]]; then
-  /usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -u all -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --without-demo all --stop-after-init
+  gosu cloudron:cloudron /app/code/odoo/odoo-bin -u account_cutoff_base -d $CLOUDRON_POSTGRESQL_DATABASE -r $CLOUDRON_POSTGRESQL_USERNAME -w $CLOUDRON_POSTGRESQL_PASSWORD --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT   --without-demo all --stop-after-init --addons-path /app/data/extra-addons,/app/code/auto/addons,/app/code/odoo/addons
 fi
+
+echo "Step 2: Setting up Odoo configuration..."
 
 # Custom paths
 crudini --set /app/data/odoo.conf 'options' addons_path "/app/data/extra-addons,/app/code/auto/addons,/app/code/odoo/addons"
@@ -68,7 +73,8 @@ crudini --set /app/data/odoo.conf 'options' interface '127.0.0.1'
 crudini --set /app/data/odoo.conf 'options' port '8069'
 crudini --set /app/data/odoo.conf 'options' longpolling_port 'False'
 crudini --set /app/data/odoo.conf 'options' gevent_port '8072'
-crudini --set /app/data/odoo.conf 'options' limit_time_cpu '600'
+crudini --set /app/data/odoo.conf 'options' limit_time_cpu '1200'
+crudini --set /app/data/odoo.conf 'options' limit_time_real '1200'
 # Securing Odoo
 crudini --set /app/data/odoo.conf 'options' test_enable "False"
 crudini --set /app/data/odoo.conf 'options' test_file "False"
@@ -104,6 +110,8 @@ crudini --set /app/data/odoo.conf 'options' db_sslmode 'False'
 #   pg_cli "INSERT INTO public.ir_mail_server (id, name, smtp_host, smtp_port, smtp_user, smtp_pass, smtp_encryption, smtp_debug, sequence, active, create_uid, create_date, write_uid, write_date) VALUES (1, 'Cloudron SMTP Service', '$CLOUDRON_MAIL_SMTP_SERVER', $CLOUDRON_MAIL_SMTP_PORT, '$CLOUDRON_MAIL_SMTP_USERNAME', '$CLOUDRON_MAIL_SMTP_PASSWORD', 'none', false, 10, true, 2, 'NOW()', 2, 'NOW()') ON CONFLICT (id) DO NOTHING;"
 # fi
 
+echo "Step 3: Setting up Odoo configuration..."
+
 # LDAP Configuration
 if [[ -z "${CLOUDRON_LDAP_SERVER+x}" ]]; then
   echo "LDAP is disabled. Removing values from config."
@@ -112,6 +120,8 @@ else
   echo "LDAP is enabled. Adding values to config."
   pg_cli "INSERT INTO public.res_company_ldap (id, sequence, company, ldap_server, ldap_server_port, ldap_binddn, ldap_password, ldap_filter, ldap_base, \"user\", create_user, ldap_tls, create_uid, create_date, write_uid, write_date) VALUES (1, 10, 1, '$CLOUDRON_LDAP_SERVER', $CLOUDRON_LDAP_PORT, '$CLOUDRON_LDAP_BIND_DN', '$CLOUDRON_LDAP_BIND_PASSWORD', '(&(objectclass=user)(mail=%s))', '$CLOUDRON_LDAP_USERS_BASE_DN', NULL, true, false, 2, 'NOW()', 2, 'NOW()') ON CONFLICT (id) DO NOTHING;;"
 fi
+
+echo "Step 4: Setting up Odoo configuration..."
 
 # Start nginx process
 sed -e "s,__REPLACE_WITH_CLOUDRON_APP_DOMAIN__,${CLOUDRON_APP_DOMAIN}," /app/pkg/nginx.conf >/run/nginx/nginx.conf

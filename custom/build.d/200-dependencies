@@ -8,9 +8,6 @@ from os.path import basename, join, splitext
 from doodbalib import CUSTOM_DIR, FILE_APT_BUILD, SRC_DIR
 from doodbalib.installer import INSTALLERS, install, logger
 
-# Build dependencies installed before any others
-install("apt", FILE_APT_BUILD)
-
 for name in INSTALLERS:
     req_files = []
     # Normal dependency installation
