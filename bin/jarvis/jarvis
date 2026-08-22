@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""
+Jarvis - Odoo Cloudron Maintenance CLI
+
+Usage: jarvis <command> [options]
+"""
+
+import sys
+import os
+
+# Add jarvis_cli to path
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, script_dir)
+
+from jarvis_cli.main import app
+
+if __name__ == "__main__":
+    app()

@@ -81,6 +81,17 @@ RUN /app/code/custom/build.d/400-clean
 RUN /app/code/custom/build.d/900-dependencies-cleanup
 WORKDIR /app/code
 
+# Jarvis : CLI de maintenance (backup, restore, shell, update de modules),
+# identique a celui embarque dans les images odoo_jarvis_assistant. Les chemins
+# du layout doodba lui sont passes par variables d'environnement.
+ENV JARVIS_ODOO_DIR=/app/code/odoo \
+    JARVIS_ADDONS_DIR=/app/code/auto/addons \
+    JARVIS_FILESTORE_DIR=/app/data/odoo/filestore \
+    JARVIS_ODOO_CONF=/app/data/odoo.conf \
+    PATH="/usr/local/bin/jarvis:$PATH"
+RUN pip3 install --no-cache-dir -r /usr/local/bin/jarvis/requirements.txt && \
+    chmod +x /usr/local/bin/jarvis/jarvis
+
 # Reconciliation de la pile OpenSSL, obligatoirement en dernier. Une dependance
 # transitive (zeep, paramiko, xmlsec, pyjwt, deps de jarvis...) peut faire
 # remonter un `cryptography` recent qui a retire le binding `_lib.GEN_EMAIL`
