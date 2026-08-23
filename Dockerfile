@@ -100,7 +100,7 @@ RUN pip3 install --no-cache-dir --ignore-installed -r /usr/local/bin/jarvis/requ
 # remonter un `cryptography` recent qui a retire le binding `_lib.GEN_EMAIL`
 # reference par un vieux pyOpenSSL systeme : Odoo plante alors sur
 # `import OpenSSL` avant meme de charger le module base.
-RUN pip3 install --no-cache-dir --ignore-installed --upgrade "pyOpenSSL>=24.3.0" cryptography
+RUN pip3 install --no-cache-dir --ignore-installed --upgrade "pyOpenSSL>=24.3.0" cryptography "urllib3<2.0"
 
 ADD start.sh odoo.conf.sample nginx.conf /app/pkg/
 
