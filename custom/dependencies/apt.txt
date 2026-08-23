@@ -9,5 +9,4 @@ xmlsec1
 libcairo2
 sox
 ffmpeg
-texlive-full
 libgirepository1.0-dev
