@@ -1,0 +1,5 @@
+# Patch PostgreSQL pour Odoo 18.0
+# Évite la connexion à la base par défaut 'postgres'
+# Ajoute après la ligne "def db_connect" avec logging pour debug
+
+sed -i.bak "/def db_connect/a\\    if tools.config.get('db_name'):\\n        to = tools.config['db_name'][0] if isinstance(tools.config['db_name'], list) else tools.config['db_name']\\n        _logger.debug('🔧 Cloudron DB patch: Using database: %s', to)" /app/code/odoo/odoo/sql_db.py

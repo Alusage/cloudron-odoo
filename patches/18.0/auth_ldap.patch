@@ -1,0 +1,6 @@
+# Patch LDAP pour Odoo 18.0
+# Mappe 'displayname' au lieu de 'cn' pour le nom d'affichage
+
+if [ -f /app/code/odoo/addons/auth_ldap/models/res_company_ldap.py ]; then
+    sed -i.bak "s/'cn'/'displayname'/g" /app/code/odoo/addons/auth_ldap/models/res_company_ldap.py
+fi

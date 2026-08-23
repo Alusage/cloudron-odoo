@@ -25,3 +25,9 @@ Refer to the [Cloudron Docs](https://docs.cloudron.io/packaging/cli) for more in
 
 This repository is heavy inspired by https://github.com/njsubedi/cloudron-odoo thanks !
 This repository use the same technic as doodba, an odoo docker image, so thanks to https://github.com/Tecnativa/doodba !
+## Maintenance : CLI jarvis
+
+L'image embarque le CLI `jarvis` (identique à celui des images
+`odoo_jarvis_assistant`) : `jarvis backup`, `jarvis restore`, `jarvis shell`,
+`jarvis module`, `jarvis remote`. Le mot de passe maître et le répertoire de
+sauvegarde se configurent dans `/app/data/.jarvis`.

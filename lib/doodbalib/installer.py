@@ -97,7 +97,16 @@ class NpmInstaller(Installer):
 
 
 class PipInstaller(Installer):
-    _install_command = ["pip", "install", "--no-cache-dir", "-r"]
+    # --ignore-installed : l'image de base a des paquets Python poses par dpkg
+    # sans fichier RECORD, que pip ne sait pas desinstaller pour les remplacer.
+    _install_command = [
+        "pip3",
+        "install",
+        "--no-cache-dir",
+        "--break-system-packages",
+        "--ignore-installed",
+        "-r",
+    ]
 
     def requirements(self):
         """Pip will use its ``--requirements`` feature."""

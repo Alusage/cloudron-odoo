@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu pipefail
+set -euo pipefail
 
 export LANG="C.UTF-8"
 export ODOO_RC="/app/data/odoo.conf"
@@ -36,19 +36,20 @@ if [[ ! -f /app/data/odoo.conf ]]; then
 
   echo "Copying default configuration file to /app/data/odoo.conf..."
   cp /app/pkg/odoo.conf.sample /app/data/odoo.conf
-  crudini --set /app/data/odoo.conf 'options' list_db "False"
-  crudini --set /app/data/odoo.conf 'options' admin_password "$CLOUDRON_MAIL_SMTP_PASSWORD"
+  crudini --set /app/data/odoo.conf 'options' list_db "True"
+  admin_password_hashed=$(/usr/bin/python3 /usr/local/bin/hash_password.py "$CLOUDRON_MAIL_SMTP_PASSWORD")
+  crudini --set /app/data/odoo.conf 'options' admin_password "$admin_password_hashed"
   echo "First run complete."
 fi
 
 # These values should be re-set to make Odoo work as expcected.
 echo "Ensuring proper [options] in /app/data/odoo.conf ..."
 
-/usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -i auth_ldap,fetchmail -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT --db_user $CLOUDRON_POSTGRESQL_USERNAME --db_pass $CLOUDRON_POSTGRESQL_PASSWORD --without-demo all --stop-after-init
+#/usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -i auth_ldap,fetchmail -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT --db_user $CLOUDRON_POSTGRESQL_USERNAME --db_pass $CLOUDRON_POSTGRESQL_PASSWORD --without-demo all --stop-after-init
 
 # Check if asking update
 if [[ -f /app/data/update ]]; then
-  /usr/local/bin/gosu cloudron:cloudron /app/code/odoo/odoo-bin -u all -d $CLOUDRON_POSTGRESQL_DATABASE -c /app/data/odoo.conf --without-demo all --stop-after-init
+  gosu cloudron:cloudron /app/code/odoo/odoo-bin -u all -d $CLOUDRON_POSTGRESQL_DATABASE -r $CLOUDRON_POSTGRESQL_USERNAME -w $CLOUDRON_POSTGRESQL_PASSWORD --db_host $CLOUDRON_POSTGRESQL_HOST --db_port $CLOUDRON_POSTGRESQL_PORT   --without-demo all --stop-after-init --addons-path /app/data/extra-addons,/app/code/auto/addons,/app/code/odoo/addons
 fi
 
 # Custom paths
@@ -68,7 +69,8 @@ crudini --set /app/data/odoo.conf 'options' interface '127.0.0.1'
 crudini --set /app/data/odoo.conf 'options' port '8069'
 crudini --set /app/data/odoo.conf 'options' longpolling_port 'False'
 crudini --set /app/data/odoo.conf 'options' gevent_port '8072'
-crudini --set /app/data/odoo.conf 'options' limit_time_cpu '600'
+crudini --set /app/data/odoo.conf 'options' limit_time_cpu '1200'
+crudini --set /app/data/odoo.conf 'options' limit_time_real '1200'
 # Securing Odoo
 crudini --set /app/data/odoo.conf 'options' test_enable "False"
 crudini --set /app/data/odoo.conf 'options' test_file "False"
@@ -133,7 +135,7 @@ nginx -c /run/nginx/nginx.conf &
 echo "Resource allocation (hard limit: 100% of available memory; soft limit: 80%)"
 if [[ -f /sys/fs/cgroup/memory/memory.memsw.limit_in_bytes ]]; then
   memory_limit_hard=$(($(cat /sys/fs/cgroup/memory/memory.memsw.limit_in_bytes)))
-  memory_limit_soft=$((memory_limit_hard * 4 / 5))
+  memory_limit_soft=$((memory_limit_hard / 5 * 4))
 else
   memory_limit_hard=2684354560
   memory_limit_soft=2147483648 # (memory_limit_hard * 4 / 5)

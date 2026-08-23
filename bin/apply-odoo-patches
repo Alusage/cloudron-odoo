@@ -1,0 +1,64 @@
+#!/bin/bash
+# Script d'application des patches Odoo versionnés
+# Applique les patches spécifiques à la version Odoo déployée
+
+set -euo pipefail
+
+ODOO_VERSION=${1:-${ODOO_VERSION:-18.0}}
+MULTIDB=${MULTIDB:-0}
+PATCHES_DIR=${PATCHES_DIR:-/app/code/patches}
+ODOO_DIR=${ODOO_DIR:-/app/code/odoo}
+
+echo "🔧 Application des patches Odoo pour la version ${ODOO_VERSION}..."
+
+# Vérifier si le répertoire de patches existe pour cette version
+if [ ! -d "${PATCHES_DIR}/${ODOO_VERSION}" ]; then
+    echo "⚠️  Aucun patch trouvé pour Odoo ${ODOO_VERSION}"
+    echo "ℹ️  Répertoires disponibles:"
+    ls -la ${PATCHES_DIR}/ 2>/dev/null || echo "   Aucun répertoire de patches trouvé"
+    exit 0
+fi
+
+echo "📁 Répertoire de patches: ${PATCHES_DIR}/${ODOO_VERSION}"
+
+# Appliquer tous les patches de la version
+PATCH_COUNT=0
+for patch_file in ${PATCHES_DIR}/${ODOO_VERSION}/*.patch; do
+    if [ -f "$patch_file" ]; then
+        patch_name=$(basename "$patch_file" .patch)
+
+        if [ "${MULTIDB}" = "1" ] && [[ "$patch_file" == *.mono.patch ]]; then
+            echo "⏭️  Patch ${patch_name} sauté (mode multidb)"
+            continue
+        fi
+
+        echo "🎯 Application du patch: ${patch_name}"
+
+        # Source le fichier patch (contient les commandes bash)
+        if source "$patch_file"; then
+            echo "✅ Patch ${patch_name} appliqué avec succès"
+            PATCH_COUNT=$((PATCH_COUNT + 1))
+        else
+            echo "❌ Erreur lors de l'application du patch ${patch_name}"
+            exit 1
+        fi
+    fi
+done
+
+if [ $PATCH_COUNT -eq 0 ]; then
+    echo "ℹ️  Aucun patch à appliquer pour Odoo ${ODOO_VERSION}"
+else
+    echo "🎉 ${PATCH_COUNT} patch(es) appliqué(s) avec succès pour Odoo ${ODOO_VERSION}"
+fi
+
+# Vérifier l'état des fichiers patchés
+echo "🔍 Vérification des fichiers patchés:"
+if [ -f "${ODOO_DIR}/odoo/sql_db.py.bak" ]; then
+    echo "✅ sql_db.py patché (backup: sql_db.py.bak)"
+fi
+
+if [ -f "${ODOO_DIR}/addons/auth_ldap/models/res_company_ldap.py.bak" ]; then
+    echo "✅ res_company_ldap.py patché (backup: res_company_ldap.py.bak)"
+fi
+
+echo "🏁 Application des patches terminée"
