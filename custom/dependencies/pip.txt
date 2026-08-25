@@ -37,6 +37,7 @@ pyquerystring
 pysaml2
 pysaml2
 pysftp
+paramiko<3.0
 python-barcode
 python-jose
 python-stdnum==1.18
