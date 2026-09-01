@@ -369,6 +369,9 @@
     depth: 400
   merges:
     - oca 18.0
+    # l10n_fr_account_vat_return + _teledec : pas encore merge en 18.0 upstream,
+    # PR de migration ouverte (necessaire pour l10n_fr_ereporting)
+    - oca refs/pull/740/head
   remotes:
     oca: https://github.com/OCA/l10n-france.git
   target: oca 18.0
