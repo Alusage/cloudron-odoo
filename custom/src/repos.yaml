@@ -696,6 +696,15 @@
 
 # Akretion github organization
 
+./account-move-export:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  merges:
+    - origin 18.0
+  remotes:
+    origin: https://github.com/akretion/account-move-export.git
+  target: origin 18.0
+
 ./account-move-import:
   defaults:
     depth: $DEPTH_DEFAULT
