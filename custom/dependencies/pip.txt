@@ -33,7 +33,7 @@ pyfrctc>=0.16
 git+https://github.com/akretion/pyfrdas2.git@main
 PyGithub
 pyjwt
-PyPDF2
+PyPDF2==2.12.1
 pyquerystring
 pysaml2
 pysaml2
